@@ -1,0 +1,18 @@
+\ Model (null)_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ c6: x7 + x8 + x9 = 1
+ c23: - x7 + x22 = 0
+ c24: - x8 + x23 = 0
+ c25: - x9 + x24 = 0
+ c1522: - 0.9961012726 x22 - 0.9961012726 x23 - 0.9961012726 x24 + x629
+   = 0
+ c1822: - 0.0014556163 x25 - 0.0014556163 x26 - 0.0014556163 x27 + x629
+   = 0
+Bounds
+ x629 free
+Binaries
+ x7 x8 x9 x22 x23 x24 x25 x26 x27
+End
