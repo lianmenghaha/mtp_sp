@@ -22,6 +22,7 @@
 #include"funcRWFile_MTL.cpp"
 #include"funcPrepare.cpp"
 #include"funcMatlab.cpp"
+#include"funcScreenMessage_MTL.cpp"
 using namespace std;
 int main (int argc,char**argv)
 {
@@ -37,7 +38,7 @@ int main (int argc,char**argv)
     cout<<"Matlab End"<<endl;
     funcWriteFile_MTL(argv[2]);
     cout<<"The result has been written in "<<argv[2]<<endl;
-    //funcScreenMessage();
+    funcScreenMessage();
 
     return 0;
 }

@@ -8,21 +8,15 @@ void funcReadFile_MTL(const char* filename_obj)
     ReadFile_obj>>rname;
     while(!ReadFile_obj.eof())
     {
-	//cout<<"obj"<<endl;//检测
 	object *o=new object;
 	o->name=rname;
 	mapnameo[rname]=o;
 	seto.insert(o);
 	ReadFile_obj>>o->area;
-	//检测
-	//cout<<rname<<endl;
-	//cout<<o->area<<endl;
 	
 	//read details of path
 	while(ReadFile_obj>>rname)
 	{
-	    //检测
-	    //cout<<"line"<<endl;
 	    if(ReadFile_obj.eof()||rname[rname.size()-1]!=':')
 		break;
 	    getline(ReadFile_obj,line);
@@ -38,7 +32,6 @@ void funcReadFile_MTL(const char* filename_obj)
 	    o->path.push_back({x1,y1});
 	    o->path.push_back({x2,y2});
 
-	    //jiance
 	    //cout<<x1<<endl;
 	    //cout<<y1<<endl;
 	    //cout<<x2<<endl;
@@ -62,7 +55,7 @@ void funcWriteFile_MTL(const char* filename)
 		//10 digits after decimal point
 		WriteFile_dtime.setf(ios_base::fixed,ios_base::floatfield);
 		WriteFile_dtime.precision(10);
-		WriteFile_dtime<<i<<" "<<oi->dtpkt[{i,oj}]<<endl;
+		WriteFile_dtime<<i<<" "<<oi->dtpkt[make_pair(i,oj)]<<endl;
 	    }
 	}
     }
