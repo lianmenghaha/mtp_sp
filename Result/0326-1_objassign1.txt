@@ -1,0 +1,5 @@
+o3
+Informations:
+Area of o3: [12.273,14.821]*[11.352,11.492]
+The total number of objects: 1
+The total drying time for this Printing group is: 0.1109013404

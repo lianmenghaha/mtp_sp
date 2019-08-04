@@ -10,7 +10,7 @@ void funcModel_Var()
     maxL->ub=seto.size();//N_G<=N_P,N_G is the number of patterns
     maxL->typ=1;
     vvar.push_back(maxL);
-	cout<<"maxL"<<endl;
+	//cout<<"maxL"<<endl;
 
     //o will be assigned into printing group o->vl
     //o->vl
@@ -23,7 +23,7 @@ void funcModel_Var()
 	o->vl->typ=1;
 	vvar.push_back(o->vl);
     }
-	cout<<"o->vl"<<endl;
+	//cout<<"o->vl"<<endl;
 
 	//binary variable for merging conflict
 	//q_{(i,j),MC}
@@ -57,7 +57,7 @@ void funcModel_Var()
 	    vvar.push_back(o->bvl[i]);
 	}
     }
-	cout<<"bvl"<<endl;
+	//cout<<"bvl"<<endl;
     //binary variable,q_{(P_i,P_j),gm},i,j=1,_,Np,gm=1,_,Ng
     //=1,when P_i,P_j are assigned to gm-th group
     //zvl
@@ -99,7 +99,7 @@ void funcModel_Var()
 			}
 		}
 	}
-	cout<<"zvl"<<endl;
+	//cout<<"zvl"<<endl;
 
 
     //binary variable q_{Pi,Pj,MC},i,j=1,_,Np
