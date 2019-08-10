@@ -90,10 +90,12 @@ void funcWriteFile_ori_sp(const char* filename_obj_sp,const char* filename_conf_
 	for(auto o:seto)
 	{
 		WriteFile_obj<<o->name<<endl;
-		for(int i=0;i!=o->opc.size();)
+		int j=1;
+		for(int i=0;i!=o->path.size();)
 		{
-			WriteFile_obj<<"line"<<i+1<<": "<<o->path[i].first<<"+"<<o->path[i].second<<"i,"<<o->path[i+1].first<<"+"<<o->path[i+1].second<<"i"<<endl;
+			WriteFile_obj<<"line"<<j<<": "<<o->path[i].first<<"+"<<o->path[i].second<<"i,"<<o->path[i+1].first<<"+"<<o->path[i+1].second<<"i"<<endl;
 			i+=2;
+			++j;
 		}
 		//jiance
 		cout<<o->name<<endl;
