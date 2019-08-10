@@ -260,6 +260,11 @@ void funcPrepare_MTL()
 	for(auto o:seto)
 	  cout<<o->name<<" ";
 	cout<<endl;
+	//compute the area of each pattern
+	for(auto o:seto)
+	{
+		o->area=(o->oxmax-o->oxmin)*(o->oymax-o->oymin);
+	}
 
 
 

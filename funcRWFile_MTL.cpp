@@ -89,7 +89,7 @@ void funcWriteFile_ori_sp(const char* filename_obj_sp,const char* filename_conf_
 	fstream WriteFile_obj(filename_obj_sp,fstream::out);
 	for(auto o:seto)
 	{
-		WriteFile_obj<<o->name<<endl;
+		WriteFile_obj<<o->name<<" "<<o->area<<endl;
 		int j=1;
 		for(int i=0;i!=o->path.size();)
 		{

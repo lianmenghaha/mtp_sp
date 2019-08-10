@@ -12,7 +12,7 @@ void funcReadFile(const char* filename_obj,const char *filename_conf)
 	o->name=rname;
 	mapnameo[rname]=o;
 	seto.insert(o);
-	ReadFile_obj>>o->area;
+	//ReadFile_obj>>o->area;
 	//read details of path
 	while(ReadFile_obj>>rname)
 	{
