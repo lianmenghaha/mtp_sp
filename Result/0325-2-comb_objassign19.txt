@@ -1,0 +1,5 @@
+o111
+Informations:
+Area of o111: [15.781,17.164]*[847.945,851.891]
+The total number of objects: 1
+The total drying time for this Printing group is: 1.2081935319

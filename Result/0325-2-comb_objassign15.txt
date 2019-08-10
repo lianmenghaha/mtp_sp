@@ -1,0 +1,5 @@
+o7
+Informations:
+Area of o7: [15.731,21.766]*[849.93,850.156]
+The total number of objects: 1
+The total drying time for this Printing group is: 0.2245874446

@@ -1,0 +1,5 @@
+o121
+Informations:
+Area of o121: [21.777,23.16]*[847.945,851.891]
+The total number of objects: 1
+The total drying time for this Printing group is: 1.2081935319

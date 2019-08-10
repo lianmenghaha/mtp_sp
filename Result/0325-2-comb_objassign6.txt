@@ -1,0 +1,11 @@
+o3
+Informations:
+Area of o3: [16.196,21.766]*[848.391,848.613]
+o15
+Informations:
+Area of o15: [17.176,22.745]*[848.969,849.191]
+o17
+Informations:
+Area of o17: [17.176,23.21]*[849.738,849.961]
+The total number of objects: 3
+The total drying time for this Printing group is: 0.5692008477

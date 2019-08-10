@@ -1,6 +1,6 @@
 #ifndef FUNCRWFILE_MTL_CPP
 #define FUNCRWFILE_MTL_CPP
-void funcReadFile_MTL(const char* filename_obj)
+void funcReadFile_MTL(const char* filename_obj,const char* filename_conf)
 {
     //read path info of objects, objtects.txt
     fstream ReadFile_obj(filename_obj,fstream::in);
@@ -39,7 +39,97 @@ void funcReadFile_MTL(const char* filename_obj)
 	}
     }
     ReadFile_obj.close();
+	//read conflict info of objects
+	fstream ReadFile_conf(filename_conf,fstream::in);
+	while(getline(ReadFile_conf,line))
+	{
+		if(ReadFile_conf.eof())
+		  break;
+		if(line.compare("no merge conflict:")==0)
+		{
+			while(ReadFile_conf>>rname)
+			{
+				if(rname.compare("FIN")==0)
+				  break;
+				object *o=mapnameo[rname];
+				int nobj;
+				ReadFile_conf>>nobj;
+				for(int i=0;i!=nobj;++i)
+				{
+					ReadFile_conf>>rname;
+					o->setco.insert(mapnameo[rname]);
+				}
+			}
+		}
+		if(line.compare("no absorption conflict:")==0)
+		{
+			while(ReadFile_conf>>rname)
+			{
+				if(rname.compare("FIN")==0)
+				  break;
+				object *o=mapnameo[rname];
+				int nobj;
+				ReadFile_conf>>nobj;
+				for(int i=0;i!=nobj;++i)
+				{
+					ReadFile_conf>>rname;
+					o->setbo.insert(mapnameo[rname]);
+				}
+			}
+		}
+	}
+		ReadFile_conf.close();
+
 }
+//write file:object.txt and conflict.txt
+//for the objects which have been decomposed
+void funcWriteFile_ori_sp(const char* filename_obj_sp,const char* filename_conf_sp)
+{
+	//write the object information
+	fstream WriteFile_obj(filename_obj_sp,fstream::out);
+	for(auto o:seto)
+	{
+		WriteFile_obj<<o->name<<endl;
+		for(int i=0;i!=o->opc.size();++i)
+		{
+			WriteFile_obj<<"line"<<i+1<<": "<<o->path[i].first<<"+"<<o->path[i].second<<"i,"<<o->path[i+1].first<<"+"<<o->path[i+1].second<<"i"<<endl;
+		}
+	}
+	WriteFile_obj.close();
+	//write the conflict relation between objects
+	fstream WriteFile_conf(filename_conf_sp,fstream::out);
+	//no merge conflict:
+	WriteFile_conf<<"no merge conflict:"<<endl;
+	for(auto o:seto)
+	{
+		WriteFile_conf<<o->name<<" "<<o->setco.size()<<" ";
+		for(auto on:o->setco)
+		  WriteFile_conf<<on->name<<" ";
+		WriteFile_conf<<endl;
+	}
+	WriteFile_conf<<"FIN"<<endl;
+	WriteFile_conf<<endl;
+	//no absorption conflict:
+	WriteFile_conf<<"no absorption conflict:"<<endl;
+	for(auto o:seto)
+	{
+		WriteFile_conf<<o->name<<" "<<o->setbo.size()<<" ";
+		for(auto on:o->setbo)
+		  WriteFile_conf<<on->name;
+		WriteFile_conf<<endl;
+	}
+	WriteFile_conf<<endl;
+	WriteFile_conf<<"FIN";
+	WriteFile_conf.close();
+}
+
+				
+		
+
+
+
+
+//write file:dtime.txt
 void funcWriteFile_MTL(const char* filename)
 {
     fstream WriteFile_dtime(filename,fstream::out);

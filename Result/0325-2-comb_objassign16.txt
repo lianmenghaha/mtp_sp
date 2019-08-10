@@ -1,0 +1,5 @@
+o4
+Informations:
+Area of o4: [16.196,21.766]*[848.773,849]
+The total number of objects: 1
+The total drying time for this Printing group is: 0.2247657983

@@ -1,0 +1,5 @@
+o123
+Informations:
+Area of o123: [26.051,28.941]*[848.473,851.363]
+The total number of objects: 1
+The total drying time for this Printing group is: 1.7953954634

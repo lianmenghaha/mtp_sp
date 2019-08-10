@@ -1,0 +1,14 @@
+o2
+Informations:
+Area of o2: [16.196,21.766]*[848.004,848.227]
+o5
+Informations:
+Area of o5: [16.196,21.766]*[849.16,849.383]
+o6
+Informations:
+Area of o6: [15.731,21.766]*[849.547,849.77]
+o14
+Informations:
+Area of o14: [17.176,22.745]*[848.582,848.805]
+The total number of objects: 4
+The total drying time for this Printing group is: 0.7416924885

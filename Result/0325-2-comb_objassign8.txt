@@ -1,0 +1,5 @@
+o16
+Informations:
+Area of o16: [17.176,23.21]*[849.352,849.578]
+The total number of objects: 1
+The total drying time for this Printing group is: 0.2245861671

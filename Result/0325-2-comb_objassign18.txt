@@ -1,0 +1,5 @@
+o112
+Informations:
+Area of o112: [12.891,15.781]*[849.238,850.598]
+The total number of objects: 1
+The total drying time for this Printing group is: 1.0655174808

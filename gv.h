@@ -1,11 +1,11 @@
 void funcReadFile(const char*, const char*);
 void funcReadFile(const char*);
-void funcReadFile_MTL(const char*);
+void funcReadFile_MTL(const char*,const char*);
 void funcPrepare();
 void funcModel_Var();
 void funcModel_Cons();
 void funcWriteFile(const char*);
-void funcWriteFile_MTL(const char*);
+void funcWriteFile_MTL(const char*,const char*,const char*);
 void funcGurobi(int, double, double, double, double, int, int);
 void funcConsClear();//
 void funcScreenMessage();
