@@ -31,26 +31,26 @@ no absorption conflict:
 o1sp1 0 
 o1sp2 0 
 o1sp3 0 
-o2 4 o1sp1o1sp2o1sp3o13
-o3 5 o1sp1o1sp2o1sp3o13o14
-o4 3 o1sp1o1sp2o1sp3
-o5 4 o1sp1o1sp2o1sp3o16
-o6 4 o1sp1o1sp2o1sp3o16
-o7 3 o1sp1o1sp2o1sp3
-o8 3 o1sp1o1sp2o1sp3
-o9 4 o1sp1o1sp2o1sp3o19
-o10 3 o1sp1o1sp2o1sp3
-o11 5 o1sp1o1sp2o1sp3o21o22
-o13 3 o12sp1o12sp2o12sp3
-o14 4 o4o12sp1o12sp2o12sp3
-o15 5 o4o5o12sp1o12sp2o12sp3
-o16 3 o12sp1o12sp2o12sp3
-o17 5 o6o7o12sp1o12sp2o12sp3
-o18 5 o7o8o12sp1o12sp2o12sp3
-o19 4 o8o12sp1o12sp2o12sp3
-o20 5 o9o10o12sp1o12sp2o12sp3
-o21 4 o10o12sp1o12sp2o12sp3
-o22 3 o12sp1o12sp2o12sp3
+o2 4 o1sp1 o1sp2 o1sp3 o13 
+o3 5 o1sp1 o1sp2 o1sp3 o13 o14 
+o4 3 o1sp1 o1sp2 o1sp3 
+o5 4 o1sp1 o1sp2 o1sp3 o16 
+o6 4 o1sp1 o1sp2 o1sp3 o16 
+o7 3 o1sp1 o1sp2 o1sp3 
+o8 3 o1sp1 o1sp2 o1sp3 
+o9 4 o1sp1 o1sp2 o1sp3 o19 
+o10 3 o1sp1 o1sp2 o1sp3 
+o11 5 o1sp1 o1sp2 o1sp3 o21 o22 
+o13 3 o12sp1 o12sp2 o12sp3 
+o14 4 o4 o12sp1 o12sp2 o12sp3 
+o15 5 o4 o5 o12sp1 o12sp2 o12sp3 
+o16 3 o12sp1 o12sp2 o12sp3 
+o17 5 o6 o7 o12sp1 o12sp2 o12sp3 
+o18 5 o7 o8 o12sp1 o12sp2 o12sp3 
+o19 4 o8 o12sp1 o12sp2 o12sp3 
+o20 5 o9 o10 o12sp1 o12sp2 o12sp3 
+o21 4 o10 o12sp1 o12sp2 o12sp3 
+o22 3 o12sp1 o12sp2 o12sp3 
 o12sp1 0 
 o12sp2 0 
 o12sp3 0 

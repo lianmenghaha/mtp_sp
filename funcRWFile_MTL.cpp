@@ -90,10 +90,16 @@ void funcWriteFile_ori_sp(const char* filename_obj_sp,const char* filename_conf_
 	for(auto o:seto)
 	{
 		WriteFile_obj<<o->name<<endl;
-		for(int i=0;i!=o->opc.size();++i)
+		for(int i=0;i!=o->opc.size();)
 		{
 			WriteFile_obj<<"line"<<i+1<<": "<<o->path[i].first<<"+"<<o->path[i].second<<"i,"<<o->path[i+1].first<<"+"<<o->path[i+1].second<<"i"<<endl;
+			i+=2;
 		}
+		//jiance
+		cout<<o->name<<endl;
+		for(auto xy:o->path)
+		  cout<<xy.first<<"?"<<xy.second<<endl;
+
 	}
 	WriteFile_obj.close();
 	//write the conflict relation between objects
@@ -115,7 +121,7 @@ void funcWriteFile_ori_sp(const char* filename_obj_sp,const char* filename_conf_
 	{
 		WriteFile_conf<<o->name<<" "<<o->setbo.size()<<" ";
 		for(auto on:o->setbo)
-		  WriteFile_conf<<on->name;
+		  WriteFile_conf<<on->name<<" ";
 		WriteFile_conf<<endl;
 	}
 	WriteFile_conf<<endl;
