@@ -8,32 +8,32 @@ if [ "$1" == "0" ]; then
 	echo "
 		Case: 2-Comb
 		"
-	time ./main_MTL ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects_ori.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict_ori.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects_pro.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict_pro.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime.txt
 elif [ "$1" == "1" ]; then
 	echo "
 		Case: 0326-1
 		"
-	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/objects.txt ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/objects_ori.txt ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/conflict_ori.txt ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/objects_pro.txt ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/conflict_pro.txt ExtractedInfo/output20190326/260319/20190326_1/190326EDALAPLACE1/dtime.txt
 elif [ "$1" == "2" ]; then
 	echo "
 		Case: 0326-2
 		"
-	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/objects.txt ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/objects_ori.txt ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/conflict_ori.txt ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/objects_pro.txt ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/conflict_pro.txt ExtractedInfo/output20190326/260319/20190326_2/190326EDALAPLACE2/dtime.txt
 elif [ "$1" == "3" ]; then
 	echo "
 		Case: 0326-3
 		"
-	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/objects.txt ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/objects_ori.txt ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/conflict_ori.txt ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/objects_pro.txt ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/conflict_pro.txt ExtractedInfo/output20190326/260319/20190326_3/190326EDALAPLACE3/dtime.txt
 elif [ "$1" == "4" ]; then
 	echo "
 		Case: 0326-4
 		"
-	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/objects.txt ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/objects_ori.txt ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/conflict_ori.txt ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/objects_pro.txt ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/conflict_pro.txt ExtractedInfo/output20190326/260319/20190326_4/190326EDALAPLACE4/dtime.txt
 elif [ "$1" == "5" ]; then
 	echo "
 		Case: 0326-5
 		"
-	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/objects.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/dtime.txt
+	time ./main_MTL ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/objects_ori.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/conflict_ori.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/objects_pro.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/conflict_pro.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/dtime.txt
 else
 	echo "NON-supported case!!!!!"
 fi

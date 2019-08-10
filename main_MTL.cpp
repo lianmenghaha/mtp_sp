@@ -21,7 +21,7 @@
 
 #include"funcRWFile_MTL.cpp"
 #include"funcPrepare_MTL.cpp"
-//#include"funcMatlab.cpp"
+#include"funcMatlab.cpp"
 //#include"funcScreenMessage_MTL.cpp"
 using namespace std;
 int main (int argc,char**argv)
@@ -35,13 +35,13 @@ int main (int argc,char**argv)
 	cout<<seto.size()<<endl;
 	funcWriteFile_ori_sp(argv[3],argv[4]);
 	cout<<"The Processed data has been written in "<<argv[3]<<" and "<<argv[4]<<endl;
-    //cout<<"Start Computing the drying time for each point."<<endl;
-    //cout<<"Matlab Begin"<<endl;
-    //funcMatlab();
-    //cout<<"Matlab End"<<endl;
-    //funcWriteFile_MTL(argv[5]);//daigai
-    //cout<<"The drying time for the points in each pattern has been written in "<<argv[3]<<endl;
-    //funcScreenMessage();
+    cout<<"Start Computing the drying time for each point."<<endl;
+    cout<<"Matlab Begin"<<endl;
+    funcMatlab();
+    cout<<"Matlab End"<<endl;
+    funcWriteFile_MTL(argv[5]);
+    cout<<"The drying time for the points in each pattern has been written in "<<argv[5]<<endl;
+    funcScreenMessage();
 
     return 0;
 }

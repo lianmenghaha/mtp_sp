@@ -6,7 +6,7 @@ void funcScreenMessage()
 	{
 		cout<<"Informations of objects: "<<o->name<<endl;
 		cout<<"Area: "<<"["<<o->oxmin<<","<<o->oxmax<<"]*["<<o->ymin<<","<<o->oymax<<"]"<<endl;
-		cout<<"The number of points in "<<o>name<<" :"<<o->opkt.size()<<endl;
+		cout<<"The number of points in "<<o->name<<" :"<<o->opkt.size()<<endl;
 	}
 
 

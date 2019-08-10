@@ -1,0 +1,12 @@
+no merge conflict:
+o1 0 
+o2 0 
+o3 0 
+FIN
+
+no absorption conflict:
+o1 0 
+o2 0 
+o3 2 o1 o2 
+
+FIN
