@@ -41,7 +41,7 @@ elif [ "$1" == "6" ]; then
 	echo "
 		Case: 2-Comb-11
 		"
-	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime11.txt 3600 Result/0325-2-comb-11
+	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime11.txt 3600 Result/0325-2-comb-11 Result-sub/0325-2-comb-11
 elif [ "$1" == "7" ]; then
 	echo "
 		Case: 2-Comb-17

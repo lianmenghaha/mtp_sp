@@ -40,7 +40,7 @@ void funcScreenMessage()
 	cout<<endl;
     cout<<"Total printing group: "<<maxL->intrval<<endl;
 	//
-	cout<<"Optimal solution2"<<endl;
+	/*cout<<"Optimal solution2"<<endl;
 	for(int i=1;i!=maxL->intrval2+1;i++)
     {
 	cout<<"Printing group "<<i<<" :"<<endl;
@@ -55,7 +55,7 @@ void funcScreenMessage()
 	cout<<"The drying time for this printing group: "<<vecl[i-1]->vmaxdt->dourval2<<endl;
     }
 	cout<<endl;
-    cout<<"Total printing group: "<<maxL->intrval2<<endl;
+    cout<<"Total printing group: "<<maxL->intrval2<<endl;*/
 
 }
 #endif

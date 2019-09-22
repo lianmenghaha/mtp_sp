@@ -142,7 +142,7 @@ void funcReadFile(const char* filename_dtime)
 }
 
 
-void funcWriteFile(const char* filename)
+void funcWriteFile(const char* filename,int psol,const char* filenamesub)
 {
     for(int i=1;i!=maxL->intrval+1;++i)
     {
@@ -180,6 +180,43 @@ void funcWriteFile(const char* filename)
 		WriteFile_oa<<maxL->intrval;
 		WriteFile_oa.close();
 	}
+	//write the information about sub-optimal solution
+	for(int i=0;i!=psol-1;++i)
+	{
+		int itmp=i+1;
+		ostringstream convi;
+		convi<<itmp;
+		string strtmp=filenamesub;
+		strtmp+="_subop"+convi.str()+".txt";
+		fstream WriteFile_sub(strtmp.c_str(),fstream::out);
+		WriteFile_sub<<"The "<<itmp<<"-th sub-optimal Solution"<<endl;
+		double dtmp=0;
+		for(int k=1;k!=maxL->intrval2[i]+1;++k)
+		{
+			WriteFile_sub<<"Pringting group "<<k<<" :"<<endl;
+			for(auto o:seto)
+			{
+				if(o->vl->intrval2[i]==k)
+				  WriteFile_sub<<o->name<<" ";
+			}
+			WriteFile_sub<<endl;
+			WriteFile_sub.setf(ios_base::fixed,ios_base::floatfield);
+			WriteFile_sub.precision(10);
+			WriteFile_sub<<"The drying time for this printing group: "<<vecl[k-1]->vmaxdt->dourval2[i]<<endl;
+			dtmp+=vecl[k-1]->vmaxdt->dourval2[i];
+		}
+		WriteFile_sub<<endl;
+		WriteFile_sub<<"Total printing group: "<<maxL->intrval2[i]<<endl;
+		WriteFile_sub<<"Total sum of optimization solution is "<<dtmp+maxL->intrval2[i]<<endl;
+	}
+
+
+
+
+
+
+
+
 }
 #endif
 
