@@ -68,6 +68,9 @@ class var
 				//store the result after Gurobi
                 int intrval;//int val
                 double dourval; // double val
+				//store the second alternative after Gurobi
+				int intrval2;
+				double dourval2;
 		// quadratic
 		map<int, set<var*>> coef_setvar;
 		map<pair<int, var*>, double> coef_varcons;

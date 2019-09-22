@@ -42,7 +42,8 @@ int main (int argc,char**argv)
     cout<<"Start Building Constraints:"<<endl;
     funcModel_Cons();
     cout<<"Finished Building Constraints: "<<nCons<<" Constraints."<<endl;
-    funcGurobi(0,0.05,atoi(argv[4]),0.0,0.0,1,1);
+    funcGurobi(0,0.05,atoi(argv[4]),0.0,0.0,1,1,10,2,9);
+	//min/max,heu,time,absgap,gap,display,focus,psol,psmode,solnr
     funcWriteFile(argv[5]);
     funcScreenMessage();
 	cout<<"HIER"<<endl;

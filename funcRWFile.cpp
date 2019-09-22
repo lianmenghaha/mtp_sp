@@ -154,8 +154,8 @@ void funcWriteFile(const char* filename)
 		int itmp=0;
 		for(auto o:seto)
 		{
-			set<object*> settmp={o};
-			WriteFile_oa<<i<<" "<<o->bvl[i]->intrval<<" "<<zvl[settmp][i]->intrval<<endl;
+			/*set<object*> settmp={o};
+			WriteFile_oa<<i<<" "<<o->bvl[i]->intrval<<" "<<zvl[settmp][i]->intrval<<endl;*/
 			if(o->vl->intrval==i)
 			{
 				++itmp;
@@ -168,10 +168,10 @@ void funcWriteFile(const char* filename)
 				//}
 			}
 		
-			for(auto oj:seto)
+			/*for(auto oj:seto)
 			{set<object*> settmp2={o,oj};
 			  WriteFile_oa<<o->name<<" "<<oj->name<<" "<<i<<" "<<zvl[settmp2][i]->intrval<<" ? "<<o->bvl[i]->intrval<<" ? "<<oj->bvl[i]->intrval<<endl;
-			}
+			}*/
 		}
 		WriteFile_oa.setf(ios_base::fixed,ios_base::floatfield);
 		WriteFile_oa.precision(10);

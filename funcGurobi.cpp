@@ -1,6 +1,6 @@
 #ifndef FUNCGUROBI_CPP
 #define FUNCGUROBI_CPP
-void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis,int focus)
+void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis,int focus,int psol,int psmode,int solnr)
 {
 	cout<<"Gurobi start"<<endl;
 	GRBVar *x=new GRBVar [vvar.size()];
@@ -13,6 +13,11 @@ void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis
 	model.getEnv().set(GRB_DoubleParam_Heuristics, heu); // default 0.05
 	model.getEnv().set(GRB_IntParam_OutputFlag, idis);
 	model.getEnv().set(GRB_IntParam_MIPFocus, focus);
+	model.getEnv().set(GRB_IntParam_PoolSolutions,psol);
+	model.getEnv().set(GRB_IntParam_PoolSearchMode,psmode);//With a setting of 2, it will find the n best solutions, where n is determined by the value of the PoolSolutions parameter
+	model.getEnv().set(GRB_IntParam_SolutionNumber,solnr);//this parameter determines which alternate solution is retrieved.
+
+
 
 	map<var*,string> mapvs;
 	for(int i=0;i<vvar.size();i++)
@@ -173,6 +178,26 @@ void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis
 		else
 		  cout<<"new type"<<endl;
 	}
+	//store the alternative solution of Gurobi
+	for(int i=0;i<vvar.size();i++)
+	{
+		if(vvar[i]->typ==0||vvar[i]->typ==1)
+		{
+			if(x[i].get(GRB_DoubleAttr_Xn)-(int)x[i].get(GRB_DoubleAttr_Xn)<0.5)
+			  vvar[i]->intrval2=(int)x[i].get(GRB_DoubleAttr_Xn);
+			else
+			  vvar[i]->intrval2=(int)x[i].get(GRB_DoubleAttr_Xn)+1;
+		}
+		else if(vvar[i]->typ==2)
+		  vvar[i]->dourval2=x[i].get(GRB_DoubleAttr_Xn);
+		else
+		  cout<<"new type"<<endl;
+	}
+
+
+
+
+
 	cout<<"Gurobi end"<<endl;
 }
 
