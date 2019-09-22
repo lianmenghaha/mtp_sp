@@ -11,7 +11,7 @@ if [ "$1" == "0" ]; then
 	echo "
 		Case: 2-Comb
 		"
-	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime.txt 30 Result/0325-2-comb
+	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime.txt 200 Result/0325-2-comb
 elif [ "$1" == "1" ]; then
 	echo "
 		Case: 0326-1
@@ -37,6 +37,16 @@ elif [ "$1" == "5" ]; then
 		Case: 0326-5
 		"
 	time ./main ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/objects.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/conflict.txt ExtractedInfo/output20190326/260319/20190326_5/190326EDALAPLACE5/dtime.txt 30 Result/0326-5
+elif [ "$1" == "6" ]; then
+	echo "
+		Case: 2-Comb-11
+		"
+	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime11.txt 3600 Result/0325-2-comb-11
+elif [ "$1" == "7" ]; then
+	echo "
+		Case: 2-Comb-17
+		"
+	time ./main ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/objects.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/conflict.txt ExtractedInfo/output20190325/201903251056/190325EDAIDESFORTMT/dtime17.txt 3600 Result/0325-2-comb-17
 else
 	echo "NON-supported case!!!!!"
 fi
@@ -45,3 +55,4 @@ fi
 # $2 (input, obj conflict: 	../ExtractedInfo/output0418/layer1/conflict.txt
 # $3 (time threshold): 		30
 # $4 (output common name):	../Result/layer1
+

@@ -12,7 +12,7 @@ void funcReadFile(const char* filename_obj,const char *filename_conf)
 	o->name=rname;
 	mapnameo[rname]=o;
 	seto.insert(o);
-	//ReadFile_obj>>o->area;
+	ReadFile_obj>>o->area;
 	//read details of path
 	while(ReadFile_obj>>rname)
 	{
@@ -37,26 +37,36 @@ void funcReadFile(const char* filename_obj,const char *filename_conf)
     fstream ReadFile_conf(filename_conf,fstream::in);
     while(getline(ReadFile_conf,line))
     {
+	//jiance
+	//cout<<"conf"<<endl;
 	if(ReadFile_conf.eof())
 	    break;
 	if(line.compare("no merge conflict:")==0)
 	{
+	    //jiance
+	    //cout<<"yidu"<<endl;
 	    while(ReadFile_conf>>rname)
 	    {
 		if(rname.compare("FIN")==0)
 		    break;
 		object *o=mapnameo[rname];
+		//cout<<rname<<" ";
 		int nobj;
 		ReadFile_conf>>nobj;
+		//cout<<nobj<<" ";
 		for(int i=0;i!=nobj;++i)
 		{
 		    ReadFile_conf>>rname;
 		    o->setco.insert(mapnameo[rname]);
+		    //jiance
+		    cout<<rname<<endl;
 		}
 	    }
 	}
 	if(line.compare("no absorption conflict:")==0)
 	{
+	    //jiance
+	    //cout<<"yidu2"<<endl;
 	    while(ReadFile_conf>>rname)
 	    {
 		if(rname.compare("FIN")==0)
@@ -68,30 +78,64 @@ void funcReadFile(const char* filename_obj,const char *filename_conf)
 		{
 		    ReadFile_conf>>rname;
 		    o->setbo.insert(mapnameo[rname]);
+		    //jiance
+		   // cout<<"no"<<endl;
 		}
 	    }
 	}
     }
     ReadFile_conf.close();
 }
+void funcJiance()
+{
+	cout<<"Jiance setco"<<endl;
+	for(auto o:seto)
+	{
+		cout<<o->name<<" :";
+		for(auto on:o->setco)
+		  cout<<on->name<<" ";
+		cout<<endl;
+	}
+	cout<<"Jiance setbo"<<endl;
+	for(auto o:seto)
+	{
+		cout<<o->name<<" :";
+		for(auto on:o->setbo)
+		  cout<<on->name<<" ";
+		cout<<endl;
+	}
+}
+
+
 void funcReadFile(const char* filename_dtime)
 {
     fstream ReadFile_dtime(filename_dtime,fstream::in);
     string rname;
     while(!ReadFile_dtime.eof())
     {
+	//jiance
+	//cout<<"now"<<endl;
 	ReadFile_dtime>>rname;
 	if(rname.compare("END")==0)
 	    break;
 	object *oi=mapnameo[rname];
+	//jiance
+	//cout<<"oi"<<endl;
+	//cout<<oi->opkt.size()<<endl;
 	ReadFile_dtime>>rname;
 	object *oj=mapnameo[rname];
+	//jiance
+	//cout<<"oj"<<endl;
 	int rnbio=pow(oi->nbio+1,2);
 	for(int i=0;i!=rnbio;++i)
 	{
 	    int itmp;
+	    //jiance
+	    //cout<<"itmp"<<endl;
 	    ReadFile_dtime>>itmp;
 	    ReadFile_dtime>>oi->dtpkt[make_pair(itmp,oj)];
+	    //jiance
+	    //cout<<oi->dtpkt[{itmp,oj}]<<endl;
 	}
     }
     ReadFile_dtime.close();
@@ -110,28 +154,32 @@ void funcWriteFile(const char* filename)
 		int itmp=0;
 		for(auto o:seto)
 		{
-			//set<object*> settmp={o};
-			//WriteFile_oa<<i<<" "<<o->bvl[i]->intrval<<" "<<zvl[settmp][i]->intrval<<endl;
+			set<object*> settmp={o};
+			WriteFile_oa<<i<<" "<<o->bvl[i]->intrval<<" "<<zvl[settmp][i]->intrval<<endl;
 			if(o->vl->intrval==i)
 			{
 				++itmp;
 				WriteFile_oa<<o->name<<endl;
-				WriteFile_oa<<"Informations:"<<endl;
-				WriteFile_oa<<"Area of "<<o->name<<": ";
-				WriteFile_oa<<"["<<o->oxmin<<","<<o->oxmax<<"]*["<<o->oymin<<","<<o->oymax<<"]"<<endl;
+				//for(auto oj:seto)
+				//{
+				//	WriteFile_oa<<o->name<<" "<<oj->name<<endl;
+					//for(int j=0;j!=o->opkt.size();++j)
+					  //WriteFile_oa<<j<<" "<<o->dtpkt[{j,oj}]<<endl;
+				//}
 			}
 		
-			/*for(auto oj:seto)
+			for(auto oj:seto)
 			{set<object*> settmp2={o,oj};
 			  WriteFile_oa<<o->name<<" "<<oj->name<<" "<<i<<" "<<zvl[settmp2][i]->intrval<<" ? "<<o->bvl[i]->intrval<<" ? "<<oj->bvl[i]->intrval<<endl;
-			}*/
+			}
 		}
 		WriteFile_oa.setf(ios_base::fixed,ios_base::floatfield);
 		WriteFile_oa.precision(10);
 		WriteFile_oa<<"The total number of objects: "<<itmp<<endl;
-		WriteFile_oa<<"The total drying time for this Printing group is: "<<vecl[i-1]->vmaxdt->dourval<<endl;
-		//WriteFile_oa<<maxL->intrval;
+		WriteFile_oa<<"The total drying time for this layer is: "<<vecl[i-1]->vmaxdt->dourval<<endl;
+		WriteFile_oa<<maxL->intrval;
 		WriteFile_oa.close();
 	}
 }
 #endif
+

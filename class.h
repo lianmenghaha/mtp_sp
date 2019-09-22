@@ -24,11 +24,6 @@ class object
 		//assume every pattern is [oxmin,oxmax]*[oymin,oymax]
 		double oxmin,oxmax,oymin,oymax;
 
-		//store the endpoints of the pattern, without repetition
-		vector<pair<double,double>> opc;
-		//if the pattern consists with more than 4 lines,with the preparatino,we divided it into rectangles and store as new objects
-		//set<object*> setsp;
-
 
 		//information about priting group and drying time
 		//vl:the printing group which object will be assigned to
@@ -48,7 +43,7 @@ object::object()
 {
 	vl=0;
 	bvl=0;
-	nbio=9;
+	nbio=10;
 }
 class layer
 {

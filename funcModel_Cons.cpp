@@ -279,7 +279,7 @@ void funcModel_Cons()
     {
 	mapcv[objcons].insert(vecl[i]->vmaxdt);
 	vecl[i]->vmaxdt->cons_i.insert(objcons);
-	vecl[i]->vmaxdt->coef_cons[objcons]=1;
+	vecl[i]->vmaxdt->coef_cons[objcons]=5;
     }
 }
 #endif

@@ -26,9 +26,10 @@
 using namespace std;
 int main (int argc,char**argv)
 {
-    cout<<"Start Reading Files: objects.txt conflict.txt"<<endl;
+	cout<<"Start Reading Files: objects.txt conflict.txt"<<endl;
     funcReadFile(argv[1],argv[2]);
     cout<<"Finished Reading Files."<<endl;
+	funcJiance();
     cout<<"Start Computing the coordinates of the points in each object."<<endl;
     funcPrepare();
     cout<<"Finished Computing."<<endl;
@@ -41,8 +42,10 @@ int main (int argc,char**argv)
     cout<<"Start Building Constraints:"<<endl;
     funcModel_Cons();
     cout<<"Finished Building Constraints: "<<nCons<<" Constraints."<<endl;
-    funcGurobi(0,0.05,atoi(argv[4]),0.0,0.01,1,1);
+    funcGurobi(0,0.05,atoi(argv[4]),0.0,0.0,1,1);
     funcWriteFile(argv[5]);
     funcScreenMessage();
+	cout<<"HIER"<<endl;
+	cout<<maxL->intrval<<endl;
     return 0;
 }
