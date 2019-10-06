@@ -15,8 +15,8 @@ void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis
 	model.getEnv().set(GRB_IntParam_MIPFocus, focus);
 	model.getEnv().set(GRB_IntParam_PoolSolutions,psol);
 	model.getEnv().set(GRB_IntParam_PoolSearchMode,psmode);//With a setting of 2, it will find the n best solutions, where n is determined by the value of the PoolSolutions parameter
-	int solnr=0;
-	model.getEnv().set(GRB_IntParam_SolutionNumber,solnr);//this parameter determines which alternate solution is retrieved.
+	//int solnr=0;
+	//model.getEnv().set(GRB_IntParam_SolutionNumber,solnr);//this parameter determines which alternate solution is retrieved.
 
 
 
@@ -195,9 +195,11 @@ void funcGurobi(int opt,double heu,double time,double absgap,double gap,int idis
 		else
 		  cout<<"new type"<<endl;
 	}*/
+	int solnr;
 	for(int k=1;k!=psol;++k)
 	{
 		solnr=k;
+		model.getEnv().set(GRB_IntParam_SolutionNumber,solnr);//this parameter d    etermines which alternate solution is retrieved.
 		for(int i=0;i<vvar.size();i++)
 		{
 			if(vvar[i]->typ==0||vvar[i]->typ==1)

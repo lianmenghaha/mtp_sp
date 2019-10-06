@@ -6,7 +6,7 @@ void funcModel_Var()
     //max printing group,N_P
     maxL=new var;
     maxL->index=vvar.size();//begin at 0
-    maxL->lb=5;
+    maxL->lb=8;
     maxL->ub=seto.size();//N_G<=N_P,N_G is the number of patterns
     maxL->typ=1;
     vvar.push_back(maxL);
